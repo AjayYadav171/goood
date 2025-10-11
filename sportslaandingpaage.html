@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stride Sports — Gear for Every Athlete</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta name="description" content="Stride Sports — premium sporting goods, apparel and footwear. Shop top brands, get expert advice, and find gear for every sport." />
+  <style>
+    :root{
+      --accent:#ff6b35;
+      --dark:#0f1724;
+      --muted:#9aa6b2;
+      --card:#ffffffdd;
+      --glass: rgba(255,255,255,0.06);
+      --max-width:1200px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Roboto, Montserrat, system-ui, -apple-system, 'Segoe UI', Arial; margin:0; color:#0b1116; background:linear-gradient(180deg,#f6f9fc, #eef4f8);}
+    a{color:var(--accent); text-decoration:none}
+    header{position:fixed; left:0; right:0; top:0; z-index:60; background:rgba(255,255,255,0.7); backdrop-filter:blur(6px); box-shadow:0 6px 18px rgba(10,20,30,0.06)}
+    .wrap{max-width:var(--max-width); margin:0 auto; padding:0 20px}
+    .nav{display:flex; align-items:center; justify-content:space-between; height:72px}
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{height:44px; width:44px; border-radius:8px; overflow:hidden; box-shadow:0 6px 18px rgba(15,20,30,0.08)}
+    .logo img{width:100%; height:100%; object-fit:cover}
+    .brand h1{font-size:18px; margin:0; letter-spacing:0.3px}
+    nav ul{display:flex; gap:18px; list-style:none; margin:0; padding:0; align-items:center}
+    nav li{font-weight:500}
+    .cta{display:inline-block; padding:10px 16px; border-radius:10px; background:var(--accent); color:white; font-weight:600}
+
+    /* Hero */
+    .hero{min-height:72vh; display:grid; place-items:center; padding:120px 20px 60px}
+    .hero-inner{max-width:1100px; width:100%; display:grid; grid-template-columns:1fr 420px; gap:34px; align-items:center}
+    .hero-card{padding:36px; border-radius:18px; background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85)); box-shadow:0 20px 50px rgba(12,18,28,0.08)}
+    h2.lead{font-size:32px; margin:0 0 10px; color:var(--dark); line-height:1.05}
+    p.lead-sub{margin:0 0 20px; color:var(--muted)}
+    .hero-ctas{display:flex; gap:12px}
+
+    .hero-preview{border-radius:16px; overflow:hidden; box-shadow:0 20px 40px rgba(10,18,24,0.08)}
+    .hero-preview img{width:100%; height:100%; display:block; object-fit:cover}
+
+    /* features */
+    .features{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px}
+    .feature{background:var(--card); padding:18px; border-radius:12px; box-shadow:0 8px 24px rgba(11,18,26,0.04); text-align:center}
+    .feature h4{margin:10px 0 6px}
+    .feature p{margin:0; color:var(--muted); font-size:14px}
+
+    /* Products */
+    .products{padding:40px 0}
+    .products-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px}
+    .product{background:var(--card); border-radius:12px; overflow:hidden; box-shadow:0 14px 40px rgba(12,18,28,0.06); transition:transform .18s ease, box-shadow .18s ease}
+    .product:hover{transform:translateY(-8px); box-shadow:0 26px 60px rgba(12,18,28,0.12)}
+    .product img{width:100%; height:180px; object-fit:cover}
+    .product .p-body{padding:12px}
+    .price{font-weight:700}
+
+    /* testimonial & newsletter */
+    .testimonials{display:grid; grid-template-columns:1fr 320px; gap:22px; align-items:center}
+    .testimonial-card{background:linear-gradient(180deg,#ffffff,#fcfeff); padding:22px; border-radius:12px; box-shadow:0 8px 30px rgba(10,18,30,0.05)}
+
+    footer{margin-top:40px; background:var(--dark); color:#d7e6ef; padding:40px 0}
+    footer .f-grid{display:grid; grid-template-columns:1fr 260px; gap:18px; align-items:start}
+    .newsletter input{width:100%; padding:12px; border-radius:10px; border:1px solid rgba(255,255,255,0.08); background:transparent; color:inherit}
+    .btn-outline{padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.12); background:transparent; color:inherit}
+
+    /* responsive */
+    @media (max-width:1000px){
+      .hero-inner{grid-template-columns:1fr}
+      .products-grid{grid-template-columns:repeat(2,1fr)}
+      .features{grid-template-columns:repeat(2,1fr)}
+      .testimonials{grid-template-columns:1fr}
+      nav ul{display:none}
+    }
+    @media (max-width:520px){
+      .product img{height:140px}
+      h2.lead{font-size:26px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo"><img src="https://images.unsplash.com/photo-1519337265831-281ec6cc8514?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=0f6c7d192b3c7f7f4f5fa2fbbf3f8d15" alt="Stride logo"></div>
+        <div>
+          <h1>Stride Sports</h1>
+          <div style="font-size:12px;color:var(--muted)">Gear for every athlete</div>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#brands">Brands</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a class="cta" href="#shop">Shop Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <div class="hero-card">
+          <p style="margin:0;color:var(--accent);font-weight:700;letter-spacing:0.8px">NEW ARRIVALS · SUMMER COLLECTION</p>
+          <h2 class="lead">Find the perfect gear. Train harder. Play longer.</h2>
+          <p class="lead-sub">From running shoes and training apparel to balls and accessories — curated for performance and comfort. Free shipping on orders over ₹2,499.</p>
+          <div class="hero-ctas">
+            <a class="cta" href="#products">Browse Collection</a>
+            <a class="btn-outline" href="#contact">Get Expert Help</a>
+          </div>
+
+          <div class="features" style="margin-top:22px">
+            <div class="feature">
+              <img src="https://images.unsplash.com/photo-1526403224747-5c39f163a4f6?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1b5c3e6b1a1f0c9f3d9a" alt="fast delivery" style="width:64px;height:64px;object-fit:cover;border-radius:10px;margin:0 auto;display:block">
+              <h4>Fast Delivery</h4>
+              <p>Express shipping across India</p>
+            </div>
+            <div class="feature">
+              <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=5c2e2f1b7d5b1a4b8c" alt="authentic" style="width:64px;height:64px;object-fit:cover;border-radius:10px;margin:0 auto;display:block">
+              <h4>Top Brands</h4>
+              <p>Adidas, Nike, Puma and more</p>
+            </div>
+            <div class="feature">
+              <img src="https://images.unsplash.com/photo-1606813908656-92d36639f9a7?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=3e2e3f4a4c6c3b6a1d" alt="expert" style="width:64px;height:64px;object-fit:cover;border-radius:10px;margin:0 auto;display:block">
+              <h4>Expert Advice</h4>
+              <p>Product guidance from coaches</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-preview">
+          <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5c2e2f1b7d5b1a4b8c" alt="sports gear preview">
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="wrap products">
+      <h3 style="margin:0 0 18px;font-family:Montserrat, sans-serif;letter-spacing:0.6px">Featured Products</h3>
+      <div class="products-grid">
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1585386959984-a415522d5d4a?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=2c6f3a5f1a" alt="running shoes">
+          <div class="p-body">
+            <div style="display:flex;justify-content:space-between;align-items:center"><strong>AirStride Runner</strong><span class="price">₹4,299</span></div>
+            <p style="margin:8px 0 0;color:var(--muted);font-size:14px">Lightweight running shoe with cushioning for long runs.</p>
+          </div>
+        </div>
+
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1600180758890-2d1b1a1b9f29?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3c4a2e1b2f" alt="training shorts">
+          <div class="p-body">
+            <div style="display:flex;justify-content:space-between;align-items:center"><strong>ProFlex Shorts</strong><span class="price">₹999</span></div>
+            <p style="margin:8px 0 0;color:var(--muted);font-size:14px">Breathable, stretch fabric for high-intensity training.</p>
+          </div>
+        </div>
+
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1517646317446-5a9269d0f1d6?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=7b9f3c2a" alt="football">
+          <div class="p-body">
+            <div style="display:flex;justify-content:space-between;align-items:center"><strong>MatchPro Football</strong><span class="price">₹1,199</span></div>
+            <p style="margin:8px 0 0;color:var(--muted);font-size:14px">Durable ball approved for league play.</p>
+          </div>
+        </div>
+
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1519741491669-8f8c7a6a1f3a?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=6a2b4d1c" alt="yoga mat">
+          <div class="p-body">
+            <div style="display:flex;justify-content:space-between;align-items:center"><strong>GripMat Yoga</strong><span class="price">₹749</span></div>
+            <p style="margin:8px 0 0;color:var(--muted);font-size:14px">Non-slip mat with extra cushioning for joints.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="wrap" style="padding:18px 0 0">
+      <div class="testimonials">
+        <div class="testimonial-card">
+          <h3 style="margin-top:0">Why Stride Sports?</h3>
+          <p style="color:var(--muted)">We started as a small local shop and grew into a team of coaches, runners and athletes who source only the best — tested by pros, loved by everyday players. Free returns within 14 days and a lifetime of product support for selected items.</p>
+
+          <div style="display:flex;gap:12px;margin-top:12px;align-items:center">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=7a1d2f3b" alt="owner" style="width:56px;height:56px;border-radius:50%;object-fit:cover;box-shadow:0 6px 18px rgba(12,18,28,0.06)">
+            <div>
+              <strong>Riya Kapoor</strong>
+              <div style="color:var(--muted);font-size:13px">Founder & Head Coach</div>
+            </div>
+          </div>
+        </div>
+
+        <aside style="padding:12px; border-radius:12px; background:linear-gradient(180deg,#fff,#f8fbff); box-shadow:0 8px 30px rgba(10,18,30,0.04)">
+          <h4 style="margin-top:0">Ready to upgrade?</h4>
+          <p style="color:var(--muted); margin-bottom:12px">Sign up and get 10% off your first order + free delivery on select items.</p>
+          <form class="newsletter" onsubmit="event.preventDefault(); alert('Thanks! We\'ll send your coupon.');">
+            <input type="email" placeholder="Your email address" required style="margin-bottom:8px">
+            <div style="display:flex;gap:8px">
+              <button class="cta" type="submit">Subscribe</button>
+              <button class="btn-outline" type="button" onclick="location.href='#products'">Start Shopping</button>
+            </div>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap f-grid">
+      <div>
+        <h3 style="margin:0 0 8px;color:white">Stride Sports</h3>
+        <p style="color:var(--muted);margin:0 0 16px">123 Athletic Lane, Mumbai • support@stridesports.example • +91 98765 43210</p>
+        <div style="display:flex;gap:10px">
+          <a class="btn-outline" href="#">Help Center</a>
+          <a class="btn-outline" href="#">Shipping</a>
+          <a class="btn-outline" href="#">Returns</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 style="margin:0 0 8px">Quick Links</h4>
+        <ul style="list-style:none;padding:0;margin:0;color:var(--muted)">
+          <li style="margin:6px 0"><a href="#products">Shop</a></li>
+          <li style="margin:6px 0"><a href="#about">About</a></li>
+          <li style="margin:6px 0"><a href="#contact">Contact</a></li>
+          <li style="margin:6px 0"><a href="#">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:28px;color:#8fa6b6;font-size:13px">© 2025 Stride Sports. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // Smooth scroll for older browsers
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        const t = document.querySelector(this.getAttribute('href'));
+        if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth', block:'start'}); }
+      })
+    })
+  </script>
+</body>
+</html>
